@@ -49,7 +49,11 @@ for h in hemispheres:
         join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[9]) + ' ' + join(wsf, sb_snippet, h + files_target[10]),
         join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11]),
 
-        join(bin_dir, 'ccbbm') + ' -transform ' + join(wsf, sb_snippet, h + files_target[11]) + ' one_hundredth.txt ' + join(wsf, sb_snippet, h + files_target[11])
+        join(bin_dir, 'ccbbm') + ' -transform ' + join(wsf, sb_snippet, h + files_target[11]) + ' ' + join(bin_dir, 'one_hundredth.txt') + ' ' + join(wsf, sb_snippet, h + files_target[11]),
+
+        'mris_convert ' + join(sb_dir, 'surf', h + '.thickness') + ' ' + join(wsf, sb_snippet, h + '_thick.asc'),
+        join(bin_dir, 'FSthick2raw') + ' ' + join(wsf, sb_snippet, h + '_thick.asc') + ' ' + join(wsf, sb_snippet, h + '_thick.raw')
+
     ]
 
 for key, val in pipeline_cmd.items():
