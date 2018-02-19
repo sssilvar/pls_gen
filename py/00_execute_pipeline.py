@@ -4,8 +4,8 @@ import pandas as pd
 
 
 # Set parameters
-dataset_folder = 'fs'
-workspace_folder = 'ws'
+dataset_folder = '/home/jullygh/Downloads/test_nii/'
+workspace_folder = '/home/jullygh/Downloads/workspace/'
 
 root = join(os.getcwd(), '..')
 bin_dir = join(root, 'bin')
