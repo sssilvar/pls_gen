@@ -52,4 +52,6 @@ for h in hemispheres:
 
 for key, val in pipeline_cmd.items():
     for cmd in val:
-        os.system(str(cmd).replace('subject_id', '001'))
+        command = str(cmd).replace('subject_id', '001')
+        print(command)
+        os.system(command)
