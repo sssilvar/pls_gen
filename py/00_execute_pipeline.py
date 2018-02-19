@@ -52,7 +52,13 @@ for h in hemispheres:
         join(bin_dir, 'ccbbm') + ' -transform ' + join(wsf, sb_snippet, h + files_target[11]) + ' ' + join(bin_dir, 'one_hundredth.txt') + ' ' + join(wsf, sb_snippet, h + files_target[11]),
 
         'mris_convert -c ' + join(sb_dir, 'surf', h + '.thickness') + ' '+ join(sb_dir, 'surf', h + '.white') + ' ' + join(wsf, sb_snippet, h + '_thick.asc'),
-        join(bin_dir, 'FSthick2raw') + ' ' + join(wsf, sb_snippet, h + '_thick.asc') + ' ' + join(wsf, sb_snippet, h + '_thick.raw')
+        join(bin_dir, 'FSthick2raw') + ' ' + join(wsf, sb_snippet, h + '_thick.asc') + ' ' + join(wsf, sb_snippet, h + '_thick.raw'),
+
+        # 14 - 15
+        join(bin_dir, 'ccbbm') + ' -gausssmooth_attribute3 256 ' + join(wsf, sb_snippet, h + '.sphere.reg.m') + ' ' + join(wsf, sb_snippet, h + '_thick.raw') + ' 2e-4 ' + join(wsf, sb_snippet, h + '_thick_2e-4.raw'),
+        join(bin_dir, 'ccbbm') + ' fastsampling ' + join(wsf, sb_snippet, h + '.sphere.reg.m') + \
+            '[' + join(bin_dir, 'FreeSurfer_IC7_RH_sym.m') + ', ' + join(bin_dir, 'FreeSurfer_IC7.m') + '] ' + join(wsf, sb_snippet, h + '.white.sampled.m') + ' -tmp_atts ' + \
+            join(wsf, sb_snippet, h + '_thick_2e-4.raw') + ' -tar_atts ' + join(wsf, sb_snippet, h + ']_thick_2e-4_sampled.raw')
 
     ]
 
