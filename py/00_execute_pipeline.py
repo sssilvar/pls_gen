@@ -39,15 +39,15 @@ for h in hemispheres:
     pipeline_cmd[h] = [
         'mris_convert ' + join(sb_dir, 'surf', h + files_target[0]) + ' ' + join(wsf, sb_snippet, h + files_target[1]),
         'java -jar ' + join(bin_dir, 'ShapeTranslator.jar') + ' -input ' + join(wsf, sb_snippet, h + files_target[1]) + ' -output ' + join(wsf, sb_snippet, h + files_target[2]) + ' -obj',
-        'ccbbm -obj2mesh ' + join(wsf, sb_snippet, h + files_target[2]) + ' ' + join(wsf, sb_snippet, h + files_target[3]),
-        'ccbbm -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
-        'ccbbm -close_boundaries ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
+        join(bin_dir, 'ccbbm') + ' -obj2mesh ' + join(wsf, sb_snippet, h + files_target[2]) + ' ' + join(wsf, sb_snippet, h + files_target[3]),
+        join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
+        join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
 
         'mris_convert ' + join(sb_dir, 'surf', h + files_target[5]) + ' ' + join(wsf, sb_snippet, h + files_target[6]),
         'java -jar ' + join(bin_dir, 'ShapeTranslator.jar') + ' -input ' + join(wsf, sb_snippet, h + files_target[6]) + ' -output ' + join(wsf, sb_snippet, h + files_target[7]) + ' -obj',
-        'ccbbm -obj2mesh ' + join(wsf, sb_snippet, h + files_target[7]) + ' ' + join(wsf, sb_snippet, h + files_target[8]),
-        'ccbbm -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[8]) + ' ' + join(wsf, sb_snippet, h + files_target[9]),
-        'ccbbm -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11])
+        join(bin_dir, 'ccbbm') + ' -obj2mesh ' + join(wsf, sb_snippet, h + files_target[7]) + ' ' + join(wsf, sb_snippet, h + files_target[8]),
+        join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[8]) + ' ' + join(wsf, sb_snippet, h + files_target[9]),
+        join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11])
     ]
 
 for key, val in pipeline_cmd.items():
