@@ -43,10 +43,10 @@ for h in hemispheres:
         join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
         join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[3]) + ' ' + join(wsf, sb_snippet, h + files_target[4]),
 
-        'mris_convert ' + join(sb_dir, 'surf', h + files_target[5]) + ' ' + join(wsf, sb_snippet, h + files_target[6]),
-        'java -jar ' + join(bin_dir, 'ShapeTranslator.jar') + ' -input ' + join(wsf, sb_snippet, h + files_target[6]) + ' -output ' + join(wsf, sb_snippet, h + files_target[7]) + ' -obj',
-        join(bin_dir, 'ccbbm') + ' -obj2mesh ' + join(wsf, sb_snippet, h + files_target[7]) + ' ' + join(wsf, sb_snippet, h + files_target[8]),
-        join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[8]) + ' ' + join(wsf, sb_snippet, h + files_target[9]),
+        'mris_convert ' + join(sb_dir, 'surf', h + files_target[6]) + ' ' + join(wsf, sb_snippet, h + files_target[7]),
+        'java -jar ' + join(bin_dir, 'ShapeTranslator.jar') + ' -input ' + join(wsf, sb_snippet, h + files_target[7]) + ' -output ' + join(wsf, sb_snippet, h + files_target[8]) + ' -obj',
+        join(bin_dir, 'ccbbm') + ' -obj2mesh ' + join(wsf, sb_snippet, h + files_target[8]) + ' ' + join(wsf, sb_snippet, h + files_target[9]),
+        join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[9]) + ' ' + join(wsf, sb_snippet, h + files_target[10]),
         join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11])
     ]
 
