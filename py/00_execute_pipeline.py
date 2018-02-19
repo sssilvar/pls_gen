@@ -51,7 +51,7 @@ for h in hemispheres:
 
         join(bin_dir, 'ccbbm') + ' -transform ' + join(wsf, sb_snippet, h + files_target[11]) + ' ' + join(bin_dir, 'one_hundredth.txt') + ' ' + join(wsf, sb_snippet, h + files_target[11]),
 
-        'mris_convert -c ' + join(sb_dir, 'surf', h + '.thickness') + ' '+ join(sb_dir, 'surf', h + '.orig') + ' ' + join(wsf, sb_snippet, h + '_thick.asc'),
+        'mris_convert -c ' + join(sb_dir, 'surf', h + '.thickness') + ' '+ join(sb_dir, 'surf', h + '.white') + ' ' + join(wsf, sb_snippet, h + '_thick.asc'),
         join(bin_dir, 'FSthick2raw') + ' ' + join(wsf, sb_snippet, h + '_thick.asc') + ' ' + join(wsf, sb_snippet, h + '_thick.raw')
 
     ]
