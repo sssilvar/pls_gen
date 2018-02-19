@@ -47,7 +47,9 @@ for h in hemispheres:
         'java -jar ' + join(bin_dir, 'ShapeTranslator.jar') + ' -input ' + join(wsf, sb_snippet, h + files_target[7]) + ' -output ' + join(wsf, sb_snippet, h + files_target[8]) + ' -obj',
         join(bin_dir, 'ccbbm') + ' -obj2mesh ' + join(wsf, sb_snippet, h + files_target[8]) + ' ' + join(wsf, sb_snippet, h + files_target[9]),
         join(bin_dir, 'ccbbm') + ' -enforce_manifold_topology ' + join(wsf, sb_snippet, h + files_target[9]) + ' ' + join(wsf, sb_snippet, h + files_target[10]),
-        join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11])
+        join(bin_dir, 'ccbbm') + ' -close_boundaries ' + join(wsf, sb_snippet, h + files_target[10]) + ' ' + join(wsf, sb_snippet, h + files_target[11]),
+
+        join(bin_dir, 'ccbbm') + ' -transform ' + join(wsf, sb_snippet, h + files_target[11]) + ' one_hundredth.txt ' + join(wsf, sb_snippet, h + files_target[11])
     ]
 
 for key, val in pipeline_cmd.items():
