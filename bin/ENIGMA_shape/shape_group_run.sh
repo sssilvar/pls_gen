@@ -20,13 +20,13 @@ outDirectory=$3
 
 ## Path to FreeSurfer Binary
 #----modify-this----  
-FS=/home/common/applications/freesurfer/freesurfer/
+FS=/usr/local/freesurfer
 #FS=/usr/local/freesurfer-5.3.0_64bit/
 FS_binary=${FS}bin/
 
 ## directory where you've downloaded and stored all the shape stuff, containing MedialDemonsShared folder
 #----modify-this----  
-runDirectory=/home/data/lschmaal/testshape/
+runDirectory=$(pwd)
 #runDirectory=/ifshome/bgutman/
 
 
