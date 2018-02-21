@@ -20,7 +20,7 @@
   #EXAMPLE /usr/local/freesurfer-5.3.0_64bit
 
 #----modify-this----  
-   FREESURFER_HOME=/usr/local/freesurfer
+   FREESURFER_HOME=/usr/local/freesurfer/
 
 
 #################################################################################
